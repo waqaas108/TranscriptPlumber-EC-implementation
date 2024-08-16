@@ -1,9 +1,35 @@
-# MScBMI Capstone project - mRNAplumber
+# MScBMI Capstone project - TranscriptPlumber
 
-### Developers: Waqaas Akmal Butt, Maya Nahar
-### Sponsor: Dr. Tzintzuni Garcia
+Developers: Waqaas Akmal Butt, Maya Nahar
+Sponsor: Dr. Tzintzuni Garcia
 
-## Description: A python based code pipeline to enable querying the CPTAC databases for genes with dysregulation at the transcript level as opposed to the gene level.
+### Description: A python based code pipeline to enable querying the CPTAC databases for genes with dysregulation at the transcript level as opposed to the gene level.
+
+### Abstract
+
+Background: Studies of transcriptional changes in cancer have primarily analyzed changes occurring at
+the gene level, though transcript-level analyses may be more precise in the identification of genes
+responsible for disease pathogenesis. In light of the availability of transcript counts data and
+advancements in transcript expression estimation tools, we constructed TranscriptPlumber, a tool
+developed to quantify transcript abundance variance (TAV) into a score as a method to uncover
+potentially causal genes.
+
+Methods: TranscriptPlumber quantifies TAV using L2 normalization and the Euclidean distance across
+disease cohort and control group transcript count vectors. To demonstrate TranscriptPlumber’s utility, we
+analyzed cancer tissue from an endometrioid adenocarcinoma cohort against healthy tissue. Transcript
+abundance and clinical metadata were abstracted from 1,577 patient cases from the Clinical Proteomic
+Tumor Analysis Consortium (CPTAC). We compared the output of TranscriptPlumber against results
+from previous gene expression studies of endometrial cancer.
+
+Findings: TranscriptPlumber identified ESR1 to have the most varied transcripts in our disease cohort.
+Literature suggested PEG3, FOSB, and SFRP4 were significant at the gene level, and TranscriptPlumber
+found them to have insignificant dysregulation at the transcript level. LOXHD1 and AGTR1 were
+identified as genes that would have been ignored with differential gene expression analyses, but had
+significant TAV.
+
+Interpretation: The TranscriptPlumber tool revealed preliminary evidence that TAV should be further
+explored to identify relevant genes that may drive regulatory dynamics in cancer not found in gene level
+investigations.
 
 ## Timeline:
 **October 10:** Discussed the project, which involves CPTAC3 data containing several diseases and both genomics and proteomics information. The plan is to process around 3,000 cases' data using Python and integrate it as it arrives. This will take approximately two months. Explored the data and planned to match records and organize based on directory structure. Noted that the workflow was running slowly due to only one node.
@@ -34,4 +60,4 @@
 
 **February _:** Utilized L2 normalization as the primary technique followed by euclidean distance calculation for determining transcript abundance variance. Added clustered heatmap visualizations for the most dysregulated genes at the transcript level. Since our showcase queries the dataset for Endometrial Carcinomas, and the research paper we used to compare results with utilized Gene Expression Omnibus (GEO) datasets (GSE17025, GSE63678, and GSE115810), the code contains dictionaries of the genes that the research paper considered significant to enable direct comparisons.
 
-Research Article: Shi, S., Tan, Q., Feng, F. et al. Identification of core genes in the progression of endometrial cancer and cancer cell-derived exosomes by an integrative analysis. Sci Rep 10, 9862 (2020). https://doi.org/10.1038/s41598-020-66872-3
+### Research Article: Shi, S., Tan, Q., Feng, F. et al. Identification of core genes in the progression of endometrial cancer and cancer cell-derived exosomes by an integrative analysis. Sci Rep 10, 9862 (2020). https://doi.org/10.1038/s41598-020-66872-3
