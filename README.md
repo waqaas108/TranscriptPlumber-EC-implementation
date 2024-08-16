@@ -1,6 +1,7 @@
 # MScBMI Capstone project - TranscriptPlumber
 
 Developers: Waqaas Akmal Butt, Maya Nahar
+
 Sponsor: Dr. Tzintzuni Garcia
 
 ### Description: A python based code pipeline to enable querying the CPTAC databases for genes with dysregulation at the transcript level as opposed to the gene level.
